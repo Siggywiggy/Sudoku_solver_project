@@ -13,6 +13,9 @@ class Grid:
             grid_repr += "\n"
         return grid_repr
 
+    def get_size(self):
+        return self.size
+
     # Insert a value to given coordinates - row = grid[x], column = grid[x][y]
 
     def insert(self, value, row, column):
@@ -20,7 +23,7 @@ class Grid:
 
     # Get first empty cell coordinates (row and column) in a grid
 
-    def get_empy_cell_coordinates(self):
+    def get_empty_cell_coordinates(self):
         for row in range(self.size):
             for column in range(self.size):
                 if self.grid[row][column] == 0:
