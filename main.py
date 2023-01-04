@@ -1,5 +1,5 @@
 from grid import Grid
 
-test_grid = Grid(12)
+test_grid = Grid(9)
 
-test_grid.__repr__()
+print(test_grid)

@@ -1,30 +1,29 @@
 class Grid:
 
     def __init__(self, size):
-        self.grid = [[0 for row in range(size)] for col in range(size)]
-    
+        self.size = size
+        self.grid = [[0 for row in range(self.size)] for col in range(self.size)]
+
     def __repr__(self):
-        print("\n Current state of the board: \n")
-        board_repr_string = (str(row) for row in self.grid)
-        print(board_repr_string)
-
-    def get_empy_cell(self):
-        for x in range(self.size):
-            for y in range(self.size):
-                if grid[x][y] == 0:
-                    return x, y
-        else:
-            return None
+        
+        print("\nCurrent state of the board: \n ")
+        grid_repr = str()
+        for row in self.grid:
+            for char in row:
+                grid_repr += str(char) + ','
+            grid_repr += '\n'     
+        return grid_repr
     
-    def grid_is_filled(self):
-        for x in range(9):
-            for y in range(9):
-                if grid[x][y] == 0:
+    def get_empy_cell_coordinates(self):
+        for row in range(self.size):
+            for column in range(self.size):
+                if self.grid[row][column] == 0:
+                    return row, column
+
+    def grid_is_full(self):
+        for row in range(self.size):
+            for column in range(self.size):
+                if self.grid[row][column] == 0:
                     return False
-        else:
-            return True
-
-
-
-
-
+        
+        return True
