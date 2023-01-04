@@ -10,7 +10,7 @@ class Grid:
         grid_repr = str()
         for row in self.grid:
             for char in row:
-                grid_repr += str(char) + ','
+                grid_repr += str(char) + ' '
             grid_repr += '\n'     
         return grid_repr
     
